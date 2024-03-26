@@ -1,0 +1,79 @@
+def dimensaoObjeto():
+    erro=True
+    while erro:
+      try:
+        alt = int(input('Digite a altura do Objeto(cm): '))
+        comp = int(input('Digite o comprimento do Objeto(cm): '))
+        larg = int(input('Digite a largura do Objeto(cm): '))
+        erro=False
+
+        volume = alt*comp*larg
+        print(f'O volume do objeto é(em cm): {volume}')
+        volume=volume
+        if volume > 1 and volume <= 1000:
+            return 10
+        elif volume > 1000 and volume <= 10000:
+            return 20
+        elif volume > 10000 and volume <= 30000:
+            return 30
+        elif volume > 30000 and volume <= 100000:
+            return 50
+        elif volume > 100000:
+            print('Não aceitamos objetos com dimensões tão grandes.\nEntre com as dimensões desejadas novamente:')
+            erro=True
+      except:
+          print('Você digitou alguma dimensão do objeto com valor não numérico:')
+
+def pesoObjeto():
+    erro=True
+    while erro:
+      try:
+        peso = int(input('Digite o Peso do Objeto(KG): '))
+        erro=False
+
+        peso=peso
+        if peso > 0 and peso <= 0.1:
+          return peso*1
+        elif peso > 0.1 and peso <= 1:
+            return peso*1.5
+        elif peso > 1 and peso <= 10:
+              return peso*2
+        elif peso > 10 and peso <= 30:
+            return peso*3
+        elif peso > 30:
+              print('Não aceitamos objetos tão pesados.\nEntre com o peso desejado novamente')
+              print(f'Multiplicador do peso: ',{Mpeso})
+              erro=True
+      except:
+          print('Você digitou peso do objero com valor não numérico:')
+
+def rotaObjeto():
+  while True:
+    rota = input(print('Selecione a Rota: \n RS - De Rio de Janeiro até São Paulo\n SR - De São Paulo até Rio de Janeiro\n BS - De Brasília até São Paulo\n SB - De São Paulo até Brasília\n BR - De Brasília até Rio de Janeiro\n RB - Rio de Janeiro até Brasília'))
+    Mrota=0
+    print(f'A Rota escolhida foi: {rota}')
+    if rota == 'RS':
+       Mrota = 1
+       break
+    elif rota == 'SR':
+        Mrota = 1
+        break
+    elif rota == 'BS':
+      Mrota = 1.2
+      break
+    elif rota == 'SB':
+        Mrota = 1.2
+        break
+    elif rota == 'BR':
+       Mrota = 1.5
+       break
+    elif rota == 'RB':
+      Mrota = 1.5
+      break
+    else:
+      print('Você digitou uma rota que não existe. \nPor favor entre com a rota desejada novamente. ')
+
+print('Bem Vindo a Companhia de Logistica Marco Aurelio de Lima Vieira S.A.')
+dimensaoObjeto()
+pesoObjeto()
+rotaObjeto()
